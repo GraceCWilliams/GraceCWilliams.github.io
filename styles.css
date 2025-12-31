@@ -34,13 +34,13 @@
     background: linear-gradient(135deg, #0f172a, #1e293b);
   }
   
-  /* =========================
-     Profile Picture
-     ========================= */
-  .profile-pic {
+/* =========================
+   Profile Picture
+   ========================= */
+   .profile-pic {
     position: fixed;
     top: 1rem;
-    right: 1rem;
+    left: 1rem;       /* changed from right:1rem to left:1rem */
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -53,6 +53,7 @@
   .profile-pic:hover {
     transform: scale(1.1);
   }
+  
   
   /* =========================
      Links
