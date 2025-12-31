@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grace C. Williams Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
+
+  <header>
+    <h1>Grace C. Williams</h1>
+    <p>Computer Science & Mathematics | Data Science | AI & Visualization</p>
+    <p>
+      <a href="resume.pdf" target="_blank">Resume</a> | 
+      <a href="https://www.linkedin.com/in/grace-c-williams/" target="_blank">LinkedIn</a> | 
+      <a href="https://github.com/GraceCWilliams" target="_blank">GitHub</a>
+    </p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Featured Projects</h2>
+
+      <div class="project-card">
+        <h3>Clinical ML Prediction Model</h3>
+        <p>Predictive modeling on clinical data using scikit-learn and R.</p>
+        <p>Tech: Python, scikit-learn, R, Jupyter</p>
+        <p>
+          <a href="#">GitHub</a> | 
+          <a href="#">Colab</a> | 
+          <a href="#">Write-up</a>
+        </p>
+      </div>
+
+      <!-- Add more project cards here -->
+
+    </section>
+  </main>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      if(html.getAttribute('data-theme') === 'light') {
+        html.setAttribute('data-theme', 'dark');
+        document.querySelector('.theme-toggle').textContent = '☀️';
+      } else {
+        html.setAttribute('data-theme', 'light');
+        document.querySelector('.theme-toggle').textContent = '🌙';
+      }
+    }
+  </script>
+</body>
+</html>
