@@ -1,66 +1,57 @@
 :root {
-    --bg-color: #ffffff;
-    --text-color: #111111;
-    --link-color: #1d4ed8;
-    --card-bg: #f3f4f6;
-  }
-  
-  [data-theme="dark"] {
-    --bg-color: #0f172a;
-    --text-color: #e5e7eb;
-    --link-color: #3b82f6;
-    --card-bg: #1e293b;
-  }
-  
-  body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centers everything horizontally */
-    text-align: center;  /* Centers text inside blocks */
-  }
-  
-  a {
-    color: var(--link-color);
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  header {
-    padding: 2rem;
-    background-color: var(--card-bg);
-    width: 100%;
-  }
-  
-  main {
-    padding: 2rem;
-    max-width: 900px;
-    width: 100%;
-  }
-  
-  .project-card {
-    background-color: var(--card-bg);
-    padding: 1rem;
-    margin: 1rem auto;
-    border-radius: 0.5rem;
-    text-align: center; /* Centers text inside project cards */
-  }
-  
-  .theme-toggle {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    border: 1px solid var(--text-color);
-    border-radius: 0.25rem;
-  }
-  
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --link-color: #1d4ed8;
+  --card-bg: #f3f4f6;
+}
+
+[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --text-color: #e5e7eb;
+  --link-color: #3b82f6;
+  --card-bg: #1e293b;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center; /* Centers all inline content by default */
+}
+
+header, main {
+  max-width: 900px; /* Limit width for content */
+  margin: 0 auto;   /* Centers the block horizontally */
+  padding: 2rem;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.project-card {
+  background-color: var(--card-bg);
+  padding: 1rem;
+  margin: 1rem auto; /* auto left/right centers the card */
+  border-radius: 0.5rem;
+  text-align: center; /* Centers text inside the card */
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border: 1px solid var(--text-color);
+  border-radius: 0.25rem;
+}
+
   
