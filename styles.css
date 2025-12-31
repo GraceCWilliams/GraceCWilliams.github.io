@@ -21,7 +21,7 @@
      Global Styles
      ========================= */
   body {
-    background: linear-gradient(135deg, var(--bg-color), #e0f2fe);
+    background: linear-gradient(135deg, #ffe0e0, #ffd1b3); /* soft sunset ombre */
     color: var(--text-color);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -32,6 +32,26 @@
   
   [data-theme="dark"] {
     background: linear-gradient(135deg, #0f172a, #1e293b);
+  }
+  
+  /* =========================
+     Profile Picture
+     ========================= */
+  .profile-pic {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-color);
+    object-fit: cover;
+    z-index: 1000;
+    transition: transform 0.2s;
+  }
+  
+  .profile-pic:hover {
+    transform: scale(1.1);
   }
   
   /* =========================
@@ -131,7 +151,7 @@
   .theme-toggle {
     position: fixed;
     top: 1rem;
-    right: 1rem;
+    right: 80px; /* leave space for profile pic */
     cursor: pointer;
     padding: 0.5rem;
     border: 1px solid var(--text-color);
@@ -151,6 +171,4 @@
   html {
     scroll-behavior: smooth;
   }
-  
-
   
