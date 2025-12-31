@@ -1,57 +1,156 @@
-:root {
-  --bg-color: #ffffff;
-  --text-color: #111111;
-  --link-color: #1d4ed8;
-  --card-bg: #f3f4f6;
-}
-
-[data-theme="dark"] {
-  --bg-color: #0f172a;
-  --text-color: #e5e7eb;
-  --link-color: #3b82f6;
-  --card-bg: #1e293b;
-}
-
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  text-align: center; /* Centers all inline content by default */
-}
-
-header, main {
-  max-width: 900px; /* Limit width for content */
-  margin: 0 auto;   /* Centers the block horizontally */
-  padding: 2rem;
-}
-
-a {
-  color: var(--link-color);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-.project-card {
-  background-color: var(--card-bg);
-  padding: 1rem;
-  margin: 1rem auto; /* auto left/right centers the card */
-  border-radius: 0.5rem;
-  text-align: center; /* Centers text inside the card */
-}
-
-.theme-toggle {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  cursor: pointer;
-  padding: 0.5rem;
-  border: 1px solid var(--text-color);
-  border-radius: 0.25rem;
-}
+/* =========================
+   Root Variables
+   ========================= */
+   :root {
+    --bg-color: #ffffff;
+    --text-color: #111111;
+    --link-color: #1d4ed8;
+    --card-bg: #f3f4f6;
+    --accent-color: #f59e0b;
+  }
+  
+  [data-theme="dark"] {
+    --bg-color: #0f172a;
+    --text-color: #e5e7eb;
+    --link-color: #3b82f6;
+    --card-bg: #1e293b;
+    --accent-color: #fbbf24;
+  }
+  
+  /* =========================
+     Global Styles
+     ========================= */
+  body {
+    background: linear-gradient(135deg, var(--bg-color), #e0f2fe);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  [data-theme="dark"] {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+  }
+  
+  /* =========================
+     Links
+     ========================= */
+  a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  a:hover {
+    color: var(--accent-color);
+  }
+  
+  /* =========================
+     Buttons
+     ========================= */
+  .btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0.25rem;
+    border-radius: 0.5rem;
+    background-color: var(--accent-color);
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.2s, transform 0.2s;
+  }
+  
+  .btn:hover {
+    background-color: #f59e0b;
+    transform: translateY(-2px);
+  }
+  
+  /* =========================
+     Header
+     ========================= */
+  header {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 1rem;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s;
+  }
+  
+  header h1:hover {
+    color: var(--accent-color);
+  }
+  
+  header p a {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s;
+  }
+  
+  header p a:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+  }
+  
+  /* =========================
+     Main Section
+     ========================= */
+  main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+  
+  /* =========================
+     Project Cards
+     ========================= */
+  .project-card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    margin: 1rem auto;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  }
+  
+  /* =========================
+     Theme Toggle Button
+     ========================= */
+  .theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border: 1px solid var(--text-color);
+    border-radius: 0.25rem;
+    background-color: var(--card-bg);
+    transition: background-color 0.2s, color 0.2s;
+  }
+  
+  .theme-toggle:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+  }
+  
+  /* =========================
+     Smooth Scroll
+     ========================= */
+  html {
+    scroll-behavior: smooth;
+  }
+  
 
   
