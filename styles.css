@@ -23,7 +23,7 @@
   body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: 'Playfair Display', 'Georgia', serif; /* elegant serif font */
+    font-family: 'Playfair Display', 'Georgia', serif;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -160,29 +160,55 @@
   /* =========================
      About Me Section
      ========================= */
-  .about-me {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
+  .about {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 1rem;
     margin: 3rem 0;
+    text-align: left;
+    transition: background-color 0.3s, color 0.3s;
   }
   
-  .about-me p {
-    max-width: 800px;
+  .about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about p {
     line-height: 1.6;
   }
   
   /* =========================
      Skills Section
      ========================= */
-  .skills-section {
+  .skills {
     margin: 3rem 0;
   }
   
-  .skills-section h2 {
+  .skills h2 {
     font-size: 2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .skills-filters {
+    margin-bottom: 1rem;
+  }
+  
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    margin: 0.25rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+  }
+  
+  .filter-btn.active,
+  .filter-btn:hover {
+    background-color: var(--accent-color);
+    color: #fff;
   }
   
   .skills-grid {
@@ -216,15 +242,15 @@
   /* =========================
      Contact Section
      ========================= */
-  .contact-section {
+  .contact {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 1rem;
     margin: 3rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
+    transition: background-color 0.3s, color 0.3s;
   }
   
-  .contact-section h2 {
+  .contact h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
   }
@@ -236,12 +262,12 @@
     gap: 2rem;
   }
   
-  .contact-container img {
+  .contact-image img {
     max-width: 200px;
     border-radius: 1rem;
   }
   
-  .contact-container form {
+  .contact-form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -249,8 +275,8 @@
     max-width: 400px;
   }
   
-  .contact-container input,
-  .contact-container textarea {
+  .contact-form input,
+  .contact-form textarea {
     padding: 0.75rem;
     border-radius: 0.5rem;
     border: 1px solid #ccc;
@@ -258,7 +284,7 @@
     box-sizing: border-box;
   }
   
-  .contact-container button {
+  .contact-form button {
     padding: 0.75rem;
     border-radius: 0.5rem;
     border: none;
@@ -269,12 +295,65 @@
     transition: background-color 0.2s;
   }
   
-  .contact-container button:hover {
+  .contact-form button:hover {
     background-color: #f59e0b;
   }
   
   /* =========================
-     Typing Animation for Page Headers
+     Flip Cards
+     ========================= */
+  .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 220px;
+    perspective: 1000px;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    backface-visibility: hidden;
+    background-color: var(--card-bg);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+  
+  /* =========================
+     Typing Animation
      ========================= */
   .typing-text {
     display: inline-block;
@@ -321,16 +400,21 @@
      Responsive Layouts
      ========================= */
   @media (min-width: 768px) {
-    .about-me {
-      flex-direction: row;
-      justify-content: center;
-      gap: 2rem;
+    .about {
+      text-align: left;
     }
   
     .contact-container {
       flex-direction: row;
       align-items: flex-start;
       gap: 2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .flip-card {
+      width: 90%;
+      height: 200px;
     }
   }
   
