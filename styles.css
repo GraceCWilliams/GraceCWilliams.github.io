@@ -23,7 +23,7 @@
   body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: 'Playfair Display', 'Georgia', serif;
+    font-family: 'Playfair Display', 'Georgia', serif; /* elegant serif font */
     margin: 0;
     padding: 0;
     text-align: center;
@@ -40,6 +40,57 @@
     color: var(--accent-color);
   }
   
+  /* =========================
+     Profile / Home Button
+     ========================= */
+  .profile-home {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 140px;
+    padding: 1rem;
+    background-color: var(--card-bg);
+    border-radius: 0.5rem;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.2s, background-color 0.2s, color 0.2s;
+  }
+  
+  .profile-home img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+  }
+  
+  .profile-home strong {
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+  
+  .profile-home span {
+    font-size: 0.85rem;
+    display: block;
+  }
+  
+  .profile-home:hover {
+    transform: scale(1.05);
+    background-color: var(--accent-color);
+    color: #fff;
+  }
+  
+  /* =========================
+     Buttons
+     ========================= */
   .btn {
     display: inline-block;
     padding: 0.5rem 1rem;
@@ -56,6 +107,9 @@
     transform: translateY(-2px);
   }
   
+  /* =========================
+     Header
+     ========================= */
   header {
     max-width: 900px;
     margin: 0 auto;
@@ -77,10 +131,19 @@
   header p a {
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
+    transition: background-color 0.2s;
   }
   
+  header p a:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+  }
+  
+  /* =========================
+     Main Section
+     ========================= */
   main {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 2rem auto;
     padding: 1rem;
   }
@@ -95,78 +158,52 @@
   }
   
   /* =========================
-     About Section
+     About Me Section
      ========================= */
-  .about {
+  .about-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
     margin: 3rem 0;
-    padding: 1.5rem;
-    background-color: var(--card-bg);
-    border-radius: 1rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
   
-  .about h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  .about p {
-    font-size: 1.1rem;
+  .about-me p {
+    max-width: 800px;
     line-height: 1.6;
   }
   
   /* =========================
      Skills Section
      ========================= */
-  .skills {
+  .skills-section {
     margin: 3rem 0;
   }
   
-  .skills h2 {
+  .skills-section h2 {
     font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  /* Filter Buttons */
-  .skills-filters {
     margin-bottom: 1.5rem;
   }
   
-  .skills-filters .filter-btn {
-    margin: 0.25rem;
-    padding: 0.4rem 0.8rem;
-    border: none;
-    border-radius: 0.5rem;
-    background-color: var(--card-bg);
-    color: var(--text-color);
-    cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
-  }
-  
-  .skills-filters .filter-btn:hover,
-  .skills-filters .filter-btn.active {
-    background-color: var(--accent-color);
-    color: #fff;
-  }
-  
-  /* Skills Grid */
   .skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 1rem;
+    justify-items: center;
+    align-items: stretch;
   }
   
   .skill-card {
-    flex: 0 0 150px;
+    width: 150px;
+    height: 100px;
     background-color: var(--card-bg);
     border-radius: 0.75rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    padding: 1rem;
-    font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    font-weight: bold;
     transition: transform 0.2s, background-color 0.2s;
   }
   
@@ -179,67 +216,89 @@
   /* =========================
      Contact Section
      ========================= */
-  .contact {
+  .contact-section {
     margin: 3rem 0;
-    padding: 1.5rem;
-    background-color: var(--card-bg);
-    border-radius: 1rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
   }
   
-  .contact h2 {
+  .contact-section h2 {
     font-size: 2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
   
   .contact-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     gap: 2rem;
   }
   
-  .contact-image img {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
+  .contact-container img {
+    max-width: 200px;
     border-radius: 1rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
   
-  .contact-form {
-    flex: 1 1 300px;
+  .contact-container form {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 1rem;
+    width: 100%;
+    max-width: 400px;
   }
   
-  .contact-form label {
-    text-align: left;
-    font-weight: bold;
-  }
-  
-  .contact-form input,
-  .contact-form textarea {
-    padding: 0.5rem;
+  .contact-container input,
+  .contact-container textarea {
+    padding: 0.75rem;
     border-radius: 0.5rem;
     border: 1px solid #ccc;
-    font-family: inherit;
-    font-size: 1rem;
     width: 100%;
     box-sizing: border-box;
-    transition: border-color 0.2s;
   }
   
-  .contact-form input:focus,
-  .contact-form textarea:focus {
-    outline: none;
-    border-color: var(--accent-color);
+  .contact-container button {
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: var(--accent-color);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .contact-container button:hover {
+    background-color: #f59e0b;
   }
   
   /* =========================
-     Theme Toggle Button
+     Typing Animation for Page Headers
+     ========================= */
+  .typing-text {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid var(--accent-color);
+    font-weight: bold;
+    font-size: 2.5rem;
+    animation: typing 3s steps(40, end) forwards,
+               blinkCaret 0.75s step-end 3s;
+  }
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blinkCaret {
+    0%, 50%, 100% { border-color: var(--accent-color); }
+    25%, 75% { border-color: transparent; }
+  }
+  
+  /* =========================
+     Theme Toggle
      ========================= */
   .theme-toggle {
     position: fixed;
@@ -259,25 +318,19 @@
   }
   
   /* =========================
-     Responsive Adjustments
+     Responsive Layouts
      ========================= */
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
+    .about-me {
+      flex-direction: row;
+      justify-content: center;
+      gap: 2rem;
+    }
+  
     .contact-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .contact-image img {
-      width: 200px;
-      height: 200px;
-    }
-  
-    .skills-grid {
-      gap: 0.5rem;
-    }
-  
-    .skill-card {
-      flex: 0 0 120px;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 2rem;
     }
   }
   
