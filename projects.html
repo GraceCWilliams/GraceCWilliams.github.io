@@ -1,154 +1,84 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grace Williams Projects</title>
+  <title>My Projects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
   <!-- Profile / Home Button -->
   <a href="index.html" class="profile-home">
     <img src="profile.jpg" alt="Grace Williams">
-    <div class="profile-info">
-      <strong>Grace Williams</strong><br>
-      <span>she/her</span><br>
-      <span>Math + CS @ Harvey Mudd College</span>
-    </div>
+    <strong>Grace Williams</strong>
+    <span>Portfolio</span>
   </a>
 
   <!-- Theme Toggle -->
-  <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
+  <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
 
+  <!-- Header -->
   <header>
-    <h1 data-text="My Projects">My Projects</h1>
-    <p>
-      <a href="index.html">Home</a> | 
-      <a href="projects.html">Projects</a> | 
-      <a href="resume.pdf" target="_blank">Resume</a> | 
-      <a href="https://github.com/GraceCWilliams" target="_blank">GitHub</a>
-    </p>
+    <h1 class="typing-text">My Projects</h1>
   </header>
 
+  <!-- Main Section -->
   <main>
-    <section>
-      <h2>AI & Data Science</h2>
-
-      <!-- Flip Card -->
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front project-card">
-            <h3>Clinical ML Prediction Model</h3>
-            <p>Predictive modeling on clinical data.</p>
-          </div>
-          <div class="flip-card-back project-card">
-            <h3>Clinical ML Prediction Model</h3>
-            <p>Full predictive modeling on clinical data using scikit-learn and R. Detailed analyses, model validation, and performance metrics included.</p>
-            <p>Tech: Python, scikit-learn, R, Jupyter</p>
-            <p>
-              <a href="#">GitHub</a> | 
-              <a href="#">Colab</a> | 
-              <a href="#">Write-up</a>
-            </p>
-          </div>
+    <!-- Project Card 1 (Observable Notebook) -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h2>Interactive Visualization</h2>
+          <p>Click to view full description.</p>
+        </div>
+        <div class="flip-card-back">
+          <h3>Interactive Visualization</h3>
+          <p>Embedded Observable Notebook:</p>
+          <iframe width="100%" height="200" frameborder="0" src="https://observablehq.com/embed/6e1ef6635fc7e060?cells=chart"></iframe>
         </div>
       </div>
+    </div>
 
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front project-card">
-            <h3>Eating Disorder Data Analysis</h3>
-            <p>Large-scale clinical data analysis.</p>
-          </div>
-          <div class="flip-card-back project-card">
-            <h3>Eating Disorder Data Analysis</h3>
-            <p>Comprehensive ML prediction and exploratory analysis on large-scale clinical data.</p>
-            <p>Tech: R, Python, Pandas, scikit-learn, Jupyter</p>
-            <p>
-              <a href="#">GitHub</a> | 
-              <a href="#">Colab</a>
-            </p>
-          </div>
+    <!-- Project Card 2 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h2>Data Analysis Project</h2>
+          <p>Click to view full description.</p>
+        </div>
+        <div class="flip-card-back">
+          <h3>Data Analysis Project</h3>
+          <p>Performed large-scale clinical data analysis using R, visualizations, and machine learning prediction models.</p>
         </div>
       </div>
+    </div>
 
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front project-card">
-            <h3>Interactive Data Visualization</h3>
-            <p>D3 + Observable notebook exploring trends.</p>
-          </div>
-          <div class="flip-card-back project-card">
-            <h3>Interactive Data Visualization</h3>
-            <p>D3 + Observable notebook exploring real-world dataset trends with interactive visualizations.</p>
-            <p>Tech: JavaScript, D3.js, Observable</p>
-            <p>
-              <a href="https://observablehq.com/d/6e1ef6635fc7e060" target="_blank">Observable</a> | 
-              <a href="#">GitHub</a>
-            </p>
-          </div>
+    <!-- Project Card 3 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h2>Software Engineering Project</h2>
+          <p>Click to view full description.</p>
+        </div>
+        <div class="flip-card-back">
+          <h3>Software Engineering Project</h3>
+          <p>Built Java-based robotics simulation projects and Python parsing programs for automation and analysis.</p>
         </div>
       </div>
+    </div>
 
-    </section>
-
-    <!-- Add other sections similarly -->
+    <!-- Add more project cards as needed -->
   </main>
 
   <script>
     function toggleTheme() {
-      const html = document.documentElement;
-      if(html.getAttribute('data-theme') === 'light') {
-        html.setAttribute('data-theme', 'dark');
-        document.querySelector('.theme-toggle').textContent = '☀️';
+      if(document.documentElement.getAttribute('data-theme') === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
       } else {
-        html.setAttribute('data-theme', 'light');
-        document.querySelector('.theme-toggle').textContent = '🌙';
+        document.documentElement.setAttribute('data-theme', 'dark');
       }
     }
-
-    // Typing animation for headers
-    function typeText(element, text, speed = 100) {
-      let i = 0;
-      element.textContent = '';
-      const interval = setInterval(() => {
-        element.textContent += text[i];
-        i++;
-        if (i >= text.length) clearInterval(interval);
-      }, speed);
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const header = document.querySelector('header h1');
-      if(header) {
-        const text = header.getAttribute('data-text') || header.textContent;
-        header.setAttribute('data-text', text);
-        typeText(header, text, 80);
-      }
-    });
   </script>
 </body>
 </html>
-<script>
-    // Theme toggle (existing)
-    function toggleTheme() {
-      const html = document.documentElement;
-      if(html.getAttribute('data-theme') === 'light') {
-        html.setAttribute('data-theme', 'dark');
-        document.querySelector('.theme-toggle').textContent = '☀️';
-      } else {
-        html.setAttribute('data-theme', 'light');
-        document.querySelector('.theme-toggle').textContent = '🌙';
-      }
-    }
-  
-    // Fade-in project cards
-    document.addEventListener("DOMContentLoaded", () => {
-      const cards = document.querySelectorAll(".project-card");
-      cards.forEach((card, i) => {
-        setTimeout(() => card.classList.add("visible"), i * 150);
-      });
-    });
-  </script>
-  

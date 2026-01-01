@@ -1,93 +1,42 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grace Williams</title>
+  <title>Grace Williams Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
   <!-- Profile / Home Button -->
   <a href="index.html" class="profile-home">
     <img src="profile.jpg" alt="Grace Williams">
-    <div class="profile-info">
-      <strong>Grace Williams</strong><br>
-      <span>she/her</span><br>
-      <span>Math + CS @ Harvey Mudd College</span>
-    </div>
+    <strong>Grace Williams</strong>
+    <span>Portfolio</span>
   </a>
 
   <!-- Theme Toggle -->
-  <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
+  <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
 
+  <!-- Header -->
   <header>
-    <h1><span class="typing-text">Welcome to My Portfolio</span></h1>
-    <p>
-      <a href="index.html">Home</a> | 
-      <a href="projects.html">Projects</a> | 
-      <a href="resume.pdf" target="_blank">Resume</a> | 
-      <a href="https://github.com/GraceCWilliams" target="_blank">GitHub</a>
-    </p>
+    <h1 class="typing-text">Welcome to My Portfolio</h1>
+    <p>Explore my projects and work in AI, software engineering, and data science.</p>
   </header>
-  
 
+  <!-- Main Section -->
   <main>
-    <section class="intro">
-      <p>Hello! I’m Grace Williams, a Math & Computer Science student at Harvey Mudd College. I love exploring AI, data science, and web development. Here, you can explore my projects, research, and technical work.</p>
-      <a href="projects.html" class="btn">See My Projects</a>
-    </section>
+    <p>Click <a href="projects.html">here</a> to see my projects.</p>
   </main>
 
   <script>
     function toggleTheme() {
-      const html = document.documentElement;
-      if(html.getAttribute('data-theme') === 'light') {
-        html.setAttribute('data-theme', 'dark');
-        document.querySelector('.theme-toggle').textContent = '☀️';
+      if(document.documentElement.getAttribute('data-theme') === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
       } else {
-        html.setAttribute('data-theme', 'light');
-        document.querySelector('.theme-toggle').textContent = '🌙';
+        document.documentElement.setAttribute('data-theme', 'dark');
       }
     }
-
-    // Typing animation for titles
-    document.addEventListener("DOMContentLoaded", () => {
-      const title = document.querySelector('.typing-title');
-      const text = title.getAttribute('data-text');
-      let i = 0;
-
-      function type() {
-        if (i < text.length) {
-          title.textContent += text.charAt(i);
-          i++;
-          setTimeout(type, 100);
-        }
-      }
-
-      type();
-    });
   </script>
 </body>
 </html>
-<script>
-  // Theme toggle (existing)
-  function toggleTheme() {
-    const html = document.documentElement;
-    if(html.getAttribute('data-theme') === 'light') {
-      html.setAttribute('data-theme', 'dark');
-      document.querySelector('.theme-toggle').textContent = '☀️';
-    } else {
-      html.setAttribute('data-theme', 'light');
-      document.querySelector('.theme-toggle').textContent = '🌙';
-    }
-  }
-
-  // Fade-in project cards
-  document.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll(".project-card");
-    cards.forEach((card, i) => {
-      setTimeout(() => card.classList.add("visible"), i * 150);
-    });
-  });
-</script>
