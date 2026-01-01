@@ -44,20 +44,33 @@
       <p>I am a passionate Math & Computer Science student with a love for AI, data science, and web development. I enjoy building projects that make an impact and exploring new technologies to solve real-world problems.</p>
     </section>
 
-    <!-- Skills Section -->
     <section class="skills">
-      <h2>Skills</h2>
+      <h2>My Skills</h2>
+    
+      <!-- Filter Buttons -->
+      <div class="skills-filters">
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="frontend">Frontend</button>
+        <button class="filter-btn" data-category="backend">Backend</button>
+        <button class="filter-btn" data-category="datascience">Data Science</button>
+        <button class="filter-btn" data-category="tools">Tools</button>
+      </div>
+    
+      <!-- Skills Grid -->
       <div class="skills-grid">
-        <div>Python</div>
-        <div>R / Data Analysis</div>
-        <div>JavaScript / D3.js</div>
-        <div>HTML & CSS</div>
-        <div>C++ / Java</div>
-        <div>Machine Learning</div>
-        <div>Data Visualization</div>
-        <div>Web Development</div>
+        <div class="skill-card" data-category="frontend">HTML</div>
+        <div class="skill-card" data-category="frontend">CSS</div>
+        <div class="skill-card" data-category="frontend">JavaScript</div>
+        <div class="skill-card" data-category="backend">Python</div>
+        <div class="skill-card" data-category="backend">Java</div>
+        <div class="skill-card" data-category="datascience">R</div>
+        <div class="skill-card" data-category="datascience">SQL</div>
+        <div class="skill-card" data-category="tools">Git</div>
+        <div class="skill-card" data-category="tools">Jupyter</div>
+        <!-- Add more as needed -->
       </div>
     </section>
+    
 
     <!-- Contact Section -->
     <section class="contact">
