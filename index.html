@@ -22,7 +22,7 @@
   <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
 
   <header>
-    <h1>Welcome to My Portfolio</h1>
+    <h1 class="typing-title" data-text="Welcome to My Portfolio"></h1>
     <p>
       <a href="index.html">Home</a> | 
       <a href="projects.html">Projects</a> | 
@@ -49,6 +49,23 @@
         document.querySelector('.theme-toggle').textContent = '🌙';
       }
     }
+
+    // Typing animation for titles
+    document.addEventListener("DOMContentLoaded", () => {
+      const title = document.querySelector('.typing-title');
+      const text = title.getAttribute('data-text');
+      let i = 0;
+
+      function type() {
+        if (i < text.length) {
+          title.textContent += text.charAt(i);
+          i++;
+          setTimeout(type, 100);
+        }
+      }
+
+      type();
+    });
   </script>
 </body>
 </html>

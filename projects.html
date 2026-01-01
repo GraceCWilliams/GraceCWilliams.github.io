@@ -22,7 +22,7 @@
   <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
 
   <header>
-    <h1>My Projects</h1>
+    <h1 class="typing-title">My Projects</h1>
     <p>
       <a href="index.html">Home</a> | 
       <a href="projects.html">Projects</a> | 
@@ -33,7 +33,7 @@
 
   <main>
     <section>
-      <h2>AI & Data Science</h2>
+      <h2 class="typing-title">AI & Data Science</h2>
 
       <div class="project-card">
         <h3>Clinical ML Prediction Model</h3>
@@ -59,7 +59,7 @@
     </section>
 
     <section>
-      <h2>Visualizations & Observable</h2>
+      <h2 class="typing-title">Visualizations & Observable</h2>
 
       <div class="project-card">
         <h3>Interactive Data Visualization</h3>
@@ -84,7 +84,7 @@
     </section>
 
     <section>
-      <h2>Web & Software Engineering</h2>
+      <h2 class="typing-title">Web & Software Engineering</h2>
 
       <div class="project-card">
         <h3>Portfolio Website</h3>
@@ -109,7 +109,7 @@
     </section>
 
     <section>
-      <h2>Coursework & Research</h2>
+      <h2 class="typing-title">Coursework & Research</h2>
 
       <div class="project-card">
         <h3>Early Music Ensemble Project</h3>
@@ -135,6 +135,7 @@
   </main>
 
   <script>
+    // Theme toggle
     function toggleTheme() {
       const html = document.documentElement;
       if(html.getAttribute('data-theme') === 'light') {
@@ -145,6 +146,34 @@
         document.querySelector('.theme-toggle').textContent = '🌙';
       }
     }
+
+    // Typing animation for headers
+    document.addEventListener("DOMContentLoaded", () => {
+      const titles = document.querySelectorAll(".typing-title");
+      titles.forEach(title => {
+        const text = title.textContent;
+        title.textContent = "";
+        let i = 0;
+        const interval = setInterval(() => {
+          title.textContent += text[i];
+          i++;
+          if(i >= text.length) clearInterval(interval);
+        }, 50);
+      });
+
+      // Fade-in + slide-up for project cards
+      const cards = document.querySelectorAll('.project-card');
+      const cardObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      cards.forEach(card => cardObserver.observe(card));
+    });
   </script>
 </body>
 </html>
