@@ -30,33 +30,76 @@
       <a href="https://github.com/GraceCWilliams" target="_blank">GitHub</a>
     </p>
   </header>
-  
 
   <main>
+    <!-- Intro Section -->
     <section class="intro">
       <p>Hello! I’m Grace Williams, a Math & Computer Science student at Harvey Mudd College. I love exploring AI, data science, and web development. Here, you can explore my projects, research, and technical work.</p>
       <a href="projects.html" class="btn">See My Projects</a>
     </section>
+
+    <!-- About Me Section -->
+    <section class="about-me">
+      <h2>About Me</h2>
+      <p>I am a passionate Math & Computer Science student with a love for AI, data science, and web development. I enjoy building projects that make an impact and exploring new technologies to solve real-world problems.</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div>Python</div>
+        <div>R / Data Analysis</div>
+        <div>JavaScript / D3.js</div>
+        <div>HTML & CSS</div>
+        <div>C++ / Java</div>
+        <div>Machine Learning</div>
+        <div>Data Visualization</div>
+        <div>Web Development</div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+      <h2>Contact Me</h2>
+      <div class="contact-container">
+        <img src="profile.jpg" alt="Grace Williams">
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+          <label for="name">Name</label>
+          <input type="text" name="name" required>
+
+          <label for="email">Email</label>
+          <input type="email" name="_replyto" required>
+
+          <label for="message">Message</label>
+          <textarea name="message" rows="5" required></textarea>
+
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </section>
   </main>
 
   <script>
+    // Theme toggle
     function toggleTheme() {
       const html = document.documentElement;
+      const toggle = document.querySelector('.theme-toggle');
       if(html.getAttribute('data-theme') === 'light') {
         html.setAttribute('data-theme', 'dark');
-        document.querySelector('.theme-toggle').textContent = '☀️';
+        toggle.textContent = '☀️';
       } else {
         html.setAttribute('data-theme', 'light');
-        document.querySelector('.theme-toggle').textContent = '🌙';
+        toggle.textContent = '🌙';
       }
     }
 
-    // Typing animation for titles
+    // Typing animation for header
     document.addEventListener("DOMContentLoaded", () => {
-      const title = document.querySelector('.typing-title');
-      const text = title.getAttribute('data-text');
+      const title = document.querySelector('.typing-text');
+      let text = title.textContent;
+      title.textContent = '';
       let i = 0;
-
       function type() {
         if (i < text.length) {
           title.textContent += text.charAt(i);
@@ -64,30 +107,8 @@
           setTimeout(type, 100);
         }
       }
-
       type();
     });
   </script>
 </body>
 </html>
-<script>
-  // Theme toggle (existing)
-  function toggleTheme() {
-    const html = document.documentElement;
-    if(html.getAttribute('data-theme') === 'light') {
-      html.setAttribute('data-theme', 'dark');
-      document.querySelector('.theme-toggle').textContent = '☀️';
-    } else {
-      html.setAttribute('data-theme', 'light');
-      document.querySelector('.theme-toggle').textContent = '🌙';
-    }
-  }
-
-  // Fade-in project cards
-  document.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll(".project-card");
-    cards.forEach((card, i) => {
-      setTimeout(() => card.classList.add("visible"), i * 150);
-    });
-  });
-</script>

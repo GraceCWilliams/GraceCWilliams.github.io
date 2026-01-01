@@ -23,7 +23,7 @@
   body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: 'Playfair Display', 'Georgia', serif; /* elegant serif font */
+    font-family: 'Playfair Display', 'Georgia', serif; 
     margin: 0;
     padding: 0;
     text-align: center;
@@ -160,9 +160,9 @@
      ========================= */
   .projects-container {
     display: flex;
-    flex-wrap: wrap;          /* wrap to next line if too many cards */
-    justify-content: center;  /* center cards horizontally */
-    gap: 2rem;                /* spacing between cards */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
     margin-top: 2rem;
   }
   
@@ -247,7 +247,7 @@
     font-weight: bold;
     font-size: 2.5rem;
     animation: typing 3s steps(40, end) forwards,
-               blinkCaret 0.75s step-end 3s; /* caret disappears after typing */
+               blinkCaret 0.75s step-end 3s;
   }
   
   @keyframes typing {
@@ -258,5 +258,87 @@
   @keyframes blinkCaret {
     0%, 50%, 100% { border-color: var(--accent-color); }
     25%, 75% { border-color: transparent; }
+  }
+  
+  /* =========================
+     About Me Section
+     ========================= */
+  .about-me {
+    margin: 3rem 1rem;
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  /* =========================
+     Skills Section
+     ========================= */
+  .skills {
+    margin: 3rem 1rem;
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .skills h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    justify-items: center;
+    font-weight: bold;
+  }
+  
+  /* =========================
+     Contact Section
+     ========================= */
+  .contact {
+    margin: 3rem 1rem;
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .contact-container img {
+    width: 200px;
+    height: 200px;
+    border-radius: 1rem;
+    object-fit: cover;
+  }
+  
+  .contact-container form {
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .contact-container form label {
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .contact-container form input,
+  .contact-container form textarea {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
   }
   
