@@ -259,4 +259,12 @@
     0%, 50%, 100% { border-color: var(--accent-color); }
     25%, 75% { border-color: transparent; }
   }
-  
+  /* =========================
+   Projects Container - Horizontal Layout
+   ========================= */
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;        /* wrap to next line on small screens */
+  justify-content: center; /* center the cards horizontally */
+  gap: 2rem;              /* space between cards */
+}
