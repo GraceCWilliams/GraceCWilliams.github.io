@@ -32,6 +32,7 @@
   </header>
 
   <main>
+
     <!-- Intro Section -->
     <section class="intro">
       <p>Hello! I’m Grace Williams, a Math & Computer Science student at Harvey Mudd College. I love exploring AI, data science, and web development. Here, you can explore my projects, research, and technical work.</p>
@@ -39,14 +40,15 @@
     </section>
 
     <!-- About Me Section -->
-    <section class="about-me">
+    <section class="about">
       <h2>About Me</h2>
-      <p>I am a passionate Math & Computer Science student with a love for AI, data science, and web development. I enjoy building projects that make an impact and exploring new technologies to solve real-world problems.</p>
+      <p>I am passionate about combining technology and research to solve real-world problems. I have experience in AI, data science, software engineering, and web development. Outside of tech, I enjoy classical music, baking, and exploring creative projects.</p>
     </section>
 
+    <!-- Skills Section -->
     <section class="skills">
       <h2>My Skills</h2>
-    
+
       <!-- Filter Buttons -->
       <div class="skills-filters">
         <button class="filter-btn active" data-category="all">All</button>
@@ -55,7 +57,7 @@
         <button class="filter-btn" data-category="datascience">Data Science</button>
         <button class="filter-btn" data-category="tools">Tools</button>
       </div>
-    
+
       <!-- Skills Grid -->
       <div class="skills-grid">
         <div class="skill-card" data-category="frontend">HTML</div>
@@ -67,61 +69,64 @@
         <div class="skill-card" data-category="datascience">SQL</div>
         <div class="skill-card" data-category="tools">Git</div>
         <div class="skill-card" data-category="tools">Jupyter</div>
-        <!-- Add more as needed -->
       </div>
     </section>
-    
 
     <!-- Contact Section -->
     <section class="contact">
       <h2>Contact Me</h2>
       <div class="contact-container">
-        <img src="profile.jpg" alt="Grace Williams">
-        <form action="https://formspree.io/f/your-form-id" method="POST">
+        <div class="contact-image">
+          <img src="profile.jpg" alt="Grace Williams">
+        </div>
+        <form class="contact-form" action="https://formsubmit.co/gracecwilliams2004@gmail.com" method="POST">
+          <input type="hidden" name="_captcha" value="false">
           <label for="name">Name</label>
-          <input type="text" name="name" required>
-
+          <input type="text" id="name" name="name" required>
           <label for="email">Email</label>
-          <input type="email" name="_replyto" required>
-
+          <input type="email" id="email" name="email" required>
           <label for="message">Message</label>
-          <textarea name="message" rows="5" required></textarea>
-
+          <textarea id="message" name="message" rows="5" required></textarea>
           <button type="submit" class="btn">Send Message</button>
         </form>
       </div>
     </section>
+
   </main>
 
+  <!-- Scripts -->
   <script>
-    // Theme toggle
     function toggleTheme() {
       const html = document.documentElement;
-      const toggle = document.querySelector('.theme-toggle');
       if(html.getAttribute('data-theme') === 'light') {
         html.setAttribute('data-theme', 'dark');
-        toggle.textContent = '☀️';
+        document.querySelector('.theme-toggle').textContent = '☀️';
       } else {
         html.setAttribute('data-theme', 'light');
-        toggle.textContent = '🌙';
+        document.querySelector('.theme-toggle').textContent = '🌙';
       }
     }
 
-    // Typing animation for header
-    document.addEventListener("DOMContentLoaded", () => {
-      const title = document.querySelector('.typing-text');
-      let text = title.textContent;
-      title.textContent = '';
-      let i = 0;
-      function type() {
-        if (i < text.length) {
-          title.textContent += text.charAt(i);
-          i++;
-          setTimeout(type, 100);
-        }
-      }
-      type();
+    // Skills filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const skillCards = document.querySelectorAll('.skill-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const category = btn.getAttribute('data-category');
+        skillCards.forEach(card => {
+          if(category === 'all' || card.getAttribute('data-category') === category) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
     });
   </script>
+
 </body>
 </html>
