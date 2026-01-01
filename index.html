@@ -21,8 +21,8 @@
   <!-- Theme Toggle -->
   <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
 
+  <!-- Navigation Header -->
   <header>
-    <h1><span class="typing-text">Welcome to My Portfolio</span></h1>
     <p>
       <a href="index.html">Home</a> | 
       <a href="projects.html">Projects</a> | 
@@ -31,24 +31,39 @@
     </p>
   </header>
 
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-name">Grace Williams</h1>
+
+      <p class="hero-focus">
+        Data Science <span>|</span>
+        Software Engineering <span>|</span>
+        Research &amp; Applied AI
+      </p>
+
+      <p class="hero-tagline">
+        building data-driven, human-centered technology
+      </p>
+
+      <a href="projects.html" class="hero-btn">
+        View Projects →
+      </a>
+    </div>
+  </section>
+
   <main>
 
-    <!-- Intro Section -->
-    <section class="intro">
-      <p>Hello! I’m Grace Williams, a Math & Computer Science student at Harvey Mudd College. I love exploring AI, data science, and web development. Here, you can explore my projects, research, and technical work.</p>
-      <a href="projects.html" class="btn">See My Projects</a>
-    </section>
-
-    <!-- About Me Section -->
+    <!-- ABOUT ME SECTION -->
     <section class="about">
       <h2>About Me</h2>
-    
+
       <p class="about-intro">
         I am a computer science and mathematics student with a data science focus, interested in building technology that is both analytically rigorous and deeply human-centered. My work sits at the intersection of data, software, and research, with a particular interest in healthcare, finance, and applied AI.
       </p>
-    
+
       <div class="about-dropdowns">
-    
+
         <details>
           <summary>What I Care About</summary>
           <ul>
@@ -57,7 +72,7 @@
             <li>Bridging research and implementation — not just asking questions, but building solutions</li>
           </ul>
         </details>
-    
+
         <details>
           <summary>What I Do</summary>
           <ul>
@@ -66,7 +81,7 @@
             <li>Work in research-driven environments, translating theory into practice</li>
           </ul>
         </details>
-    
+
         <details>
           <summary>Outside of Code</summary>
           <ul>
@@ -75,16 +90,14 @@
             <li>Am especially drawn to work that connects technical skill with social impact</li>
           </ul>
         </details>
-    
+
       </div>
     </section>
-    
 
-    <!-- Skills Section -->
+    <!-- SKILLS SECTION -->
     <section class="skills">
       <h2>My Skills</h2>
 
-      <!-- Filter Buttons -->
       <div class="skills-filters">
         <button class="filter-btn active" data-category="all">All</button>
         <button class="filter-btn" data-category="frontend">Frontend</button>
@@ -93,7 +106,6 @@
         <button class="filter-btn" data-category="tools">Tools</button>
       </div>
 
-      <!-- Skills Grid -->
       <div class="skills-grid">
         <div class="skill-card" data-category="frontend">HTML</div>
         <div class="skill-card" data-category="frontend">CSS</div>
@@ -107,21 +119,29 @@
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- CONTACT SECTION -->
     <section class="contact">
       <h2>Contact Me</h2>
+
       <div class="contact-container">
         <div class="contact-image">
           <img src="profile.jpg" alt="Grace Williams">
         </div>
-        <form class="contact-form" action="https://formsubmit.co/gracecwilliams2004@gmail.com" method="POST">
+
+        <form class="contact-form"
+              action="https://formsubmit.co/gracecwilliams2004@gmail.com"
+              method="POST">
           <input type="hidden" name="_captcha" value="false">
+
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required>
+
           <label for="email">Email</label>
           <input type="email" id="email" name="email" required>
+
           <label for="message">Message</label>
           <textarea id="message" name="message" rows="5" required></textarea>
+
           <button type="submit" class="btn">Send Message</button>
         </form>
       </div>
@@ -133,7 +153,7 @@
   <script>
     function toggleTheme() {
       const html = document.documentElement;
-      if(html.getAttribute('data-theme') === 'light') {
+      if (html.getAttribute('data-theme') === 'light') {
         html.setAttribute('data-theme', 'dark');
         document.querySelector('.theme-toggle').textContent = '☀️';
       } else {
@@ -153,11 +173,10 @@
 
         const category = btn.getAttribute('data-category');
         skillCards.forEach(card => {
-          if(category === 'all' || card.getAttribute('data-category') === category) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
+          card.style.display =
+            category === 'all' || card.dataset.category === category
+              ? 'flex'
+              : 'none';
         });
       });
     });
