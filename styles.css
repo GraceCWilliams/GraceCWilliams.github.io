@@ -2,10 +2,10 @@
    Root Variables
    ========================= */
    :root {
-    --bg-color: #ffe0e0;       /* soft pink sunset */
+    --bg-color: #ffe0e0;       /* soft pink background */
     --text-color: #111111;
     --link-color: #1d4ed8;
-    --card-bg: #f3f4f6;
+    --card-bg: #ffffff;         /* solid white for cards and profile box */
     --accent-color: #f59e0b;
   }
   
@@ -21,7 +21,7 @@
      Global Styles
      ========================= */
   body {
-    background: linear-gradient(135deg, #ffe0e0, #ffd1b3);
+    background-color: var(--bg-color);
     color: var(--text-color);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -31,7 +31,7 @@
   }
   
   [data-theme="dark"] {
-    background: linear-gradient(135deg, #0f172a, #1e293b);
+    background-color: #0f172a;
   }
   
   /* =========================
@@ -46,16 +46,16 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 120px;
-    padding: 0.5rem;
+    width: 140px;
+    padding: 1rem;
     background-color: var(--card-bg);
     border-radius: 0.5rem;
     border: 2px solid var(--accent-color);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     z-index: 1000;
     text-decoration: none;
     color: var(--text-color);
-    transition: transform 0.2s, background-color 0.2s;
+    transition: transform 0.2s, background-color 0.2s, color 0.2s;
   }
   
   .profile-home img {
@@ -64,6 +64,16 @@
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 0.5rem;
+  }
+  
+  .profile-home strong {
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+  
+  .profile-home span {
+    font-size: 0.85rem;
+    display: block;
   }
   
   .profile-home:hover {
@@ -154,13 +164,13 @@
     margin: 1rem auto;
     border-radius: 1rem;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     transition: transform 0.2s, box-shadow 0.2s;
   }
   
   .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.25);
   }
   
   /* =========================
