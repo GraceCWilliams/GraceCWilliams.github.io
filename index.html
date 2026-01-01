@@ -70,3 +70,24 @@
   </script>
 </body>
 </html>
+<script>
+  // Theme toggle (existing)
+  function toggleTheme() {
+    const html = document.documentElement;
+    if(html.getAttribute('data-theme') === 'light') {
+      html.setAttribute('data-theme', 'dark');
+      document.querySelector('.theme-toggle').textContent = '☀️';
+    } else {
+      html.setAttribute('data-theme', 'light');
+      document.querySelector('.theme-toggle').textContent = '🌙';
+    }
+  }
+
+  // Fade-in project cards
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".project-card");
+    cards.forEach((card, i) => {
+      setTimeout(() => card.classList.add("visible"), i * 150);
+    });
+  });
+</script>
