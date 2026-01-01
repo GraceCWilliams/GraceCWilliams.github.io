@@ -1,84 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grace Williams Portfolio</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
   <!-- Profile / Home Button -->
   <a href="index.html" class="profile-home">
     <img src="profile.jpg" alt="Grace Williams">
-    <strong>Grace Williams</strong>
-    <span>Math & CS</span>
+    <div class="profile-info">
+      <strong>Grace Williams</strong><br>
+      <span>she/her</span><br>
+      <span>Math + CS @ Harvey Mudd College</span>
+    </div>
   </a>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="projects.html">Projects</a> |
-    <a href="resume.pdf" target="_blank">Resume</a> |
-    <a href="https://github.com/GraceCWilliams" target="_blank">GitHub</a>
-  </nav>
+  <!-- Theme Toggle -->
+  <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
 
-  <!-- Header -->
   <header>
-    <h1 class="typing-text">Welcome to My Portfolio 🌙</h1>
+    <h1 class="typing-text" id="page-title">Welcome to my portfolio</h1>
     <p>
-      Hi! I’m Grace, a Math & Computer Science student passionate about data science, AI, and improving treatments for eating disorders. I love creating interactive projects, exploring new tech, and sharing knowledge.
+      <a href="index.html">Home</a> | 
+      <a href="projects.html">Projects</a> | 
+      <a href="resume.pdf" target="_blank">Resume</a> | 
+      <a href="https://github.com/GraceCWilliams" target="_blank">GitHub</a>
     </p>
   </header>
 
   <main>
     <section>
-      <h2>Featured Projects</h2>
-      <div class="projects-container">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <h3>Observable Notebook</h3>
-              <p>Interactive data visualization project</p>
-            </div>
-            <div class="flip-card-back">
-              <p>
-                This project explores data visualization techniques on ObservableHQ, including reactive charts and interactive coding.  
-                <a href="https://observablehq.com/d/6e1ef6635fc7e060" target="_blank" class="btn">View Notebook</a>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <h3>Project 2</h3>
-              <p>Short description</p>
-            </div>
-            <div class="flip-card-back">
-              <p>Full description of Project 2 goes here.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <h3>Project 3</h3>
-              <p>Short description</p>
-            </div>
-            <div class="flip-card-back">
-              <p>Full description of Project 3 goes here.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <p>Hello! I'm Grace Williams, a Math and Computer Science student at Harvey Mudd College.  
+      I’m passionate about combining technology with medicine and data science to make an impact.  
+      Here you can explore my projects, research, and technical work.</p>
     </section>
   </main>
 
-  <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      if(html.getAttribute('data-theme') === 'light') {
+        html.setAttribute('data-theme', 'dark');
+        document.querySelector('.theme-toggle').textContent = '🌙';
+      } else {
+        html.setAttribute('data-theme', 'light');
+        document.querySelector('.theme-toggle').textContent = '🌙';
+      }
+    }
 
-  <script src="scripts.js"></script>
+    // Typing animation for page title
+    const title = document.getElementById('page-title');
+    const fullText = title.textContent;
+    title.textContent = '';
+    let i = 0;
+
+    function type() {
+      if(i < fullText.length) {
+        title.textContent += fullText.charAt(i);
+        i++;
+        setTimeout(type, 100);
+      } else {
+        // Remove caret after typing finishes
+        title.style.borderRight = 'none';
+      }
+    }
+
+    type();
+  </script>
 </body>
 </html>
