@@ -2,18 +2,11 @@
    Root Variables
    ========================= */
    :root {
-    --bg-color: #ffe0e0;
+    --bg-color: #ffe0e0;       /* soft pink background */
     --text-color: #111111;
     --link-color: #1d4ed8;
-    --card-bg: #ffffff;
+    --card-bg: #ffffff;         /* solid white for cards and profile box */
     --accent-color: #f59e0b;
-  
-    /* Hero-specific */
-    --hero-gradient: linear-gradient(
-      135deg,
-      #ffd6e8,
-      #ffeef5
-    );
   }
   
   [data-theme="dark"] {
@@ -22,12 +15,6 @@
     --link-color: #3b82f6;
     --card-bg: #1e293b;
     --accent-color: #fbbf24;
-  
-    --hero-gradient: linear-gradient(
-      135deg,
-      #1e293b,
-      #312e81
-    );
   }
   
   /* =========================
@@ -46,6 +33,7 @@
   a {
     color: var(--link-color);
     text-decoration: none;
+    transition: color 0.2s;
   }
   
   a:hover {
@@ -59,26 +47,434 @@
     position: fixed;
     top: 1rem;
     left: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     width: 140px;
     padding: 1rem;
     background-color: var(--card-bg);
-    border-radius: 0.75rem;
+    border-radius: 0.5rem;
     border: 2px solid var(--accent-color);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     z-index: 1000;
+    text-decoration: none;
     color: var(--text-color);
-    transition: transform 0.2s ease;
-  }
-  
-  .profile-home:hover {
-    transform: scale(1.05);
+    transition: transform 0.2s, background-color 0.2s, color 0.2s;
   }
   
   .profile-home img {
     width: 60px;
     height: 60px;
     border-radius: 50%;
+    object-fit: cover;
     margin-bottom: 0.5rem;
+  }
+  
+  .profile-home strong {
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+  
+  .profile-home span {
+    font-size: 0.85rem;
+    display: block;
+  }
+  
+  .profile-home:hover {
+    transform: scale(1.05);
+    background-color: var(--accent-color);
+    color: #fff;
+  }
+  
+  /* =========================
+     Buttons
+     ========================= */
+  .btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0.25rem;
+    border-radius: 0.5rem;
+    background-color: var(--accent-color);
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.2s, transform 0.2s;
+  }
+  
+  .btn:hover {
+    background-color: #f59e0b;
+    transform: translateY(-2px);
+  }
+  
+  /* =========================
+     Header
+     ========================= */
+  header {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 1rem;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s;
+  }
+  
+  header h1:hover {
+    color: var(--accent-color);
+  }
+  
+  header p a {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s;
+  }
+  
+  header p a:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+  }
+  
+  /* =========================
+     Main Section
+     ========================= */
+  main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+  
+  /* =========================
+     Intro Section
+     ========================= */
+  .intro p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  /* =========================
+     About Me Section
+     ========================= */
+  .about {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 3rem 0;
+    text-align: left;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about p {
+    line-height: 1.6;
+  }
+  /* =========================
+   About Me – Dropdowns
+   ========================= */
+
+.about {
+  margin: 4rem auto;
+  max-width: 900px;
+  text-align: left;
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-intro {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  color: var(--text-color);
+}
+
+/* Container */
+.about-dropdowns {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Each dropdown card */
+.about-dropdowns details {
+  background-color: var(--card-bg);
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover lift */
+.about-dropdowns details:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+}
+
+/* Summary (clickable header) */
+.about-dropdowns summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: 1.15rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Remove default arrow */
+.about-dropdowns summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Custom caret */
+.about-dropdowns summary::after {
+  content: "▾";
+  font-size: 1.2rem;
+  transition: transform 0.25s ease;
+}
+
+/* Rotate caret when open */
+.about-dropdowns details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+/* Content */
+.about-dropdowns ul {
+  margin-top: 1rem;
+  padding-left: 1.25rem;
+}
+
+.about-dropdowns li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+/* Smooth open animation */
+.about-dropdowns details[open] {
+  animation: dropdownFade 0.25s ease-in;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  
+  /* =========================
+     Skills Section
+     ========================= */
+  .skills {
+    margin: 3rem 0;
+  }
+  
+  .skills h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .skills-filters {
+    margin-bottom: 1rem;
+  }
+  
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    margin: 0.25rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+  }
+  
+  .filter-btn.active,
+  .filter-btn:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+  }
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    justify-items: center;
+    align-items: stretch;
+  }
+  
+  .skill-card {
+    width: 150px;
+    height: 100px;
+    background-color: var(--card-bg);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    transition: transform 0.2s, background-color 0.2s;
+  }
+  
+  .skill-card:hover {
+    transform: translateY(-3px);
+    background-color: var(--accent-color);
+    color: #fff;
+  }
+  
+  /* =========================
+     Contact Section
+     ========================= */
+  .contact {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 3rem 0;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .contact h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .contact-image img {
+    max-width: 200px;
+    border-radius: 1rem;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .contact-form button {
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: var(--accent-color);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .contact-form button:hover {
+    background-color: #f59e0b;
+  }
+  
+  /* =========================
+     Flip Cards
+     ========================= */
+  .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 220px;
+    perspective: 1000px;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    backface-visibility: hidden;
+    background-color: var(--card-bg);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+  
+  /* =========================
+     Typing Animation
+     ========================= */
+  .typing-text {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid var(--accent-color);
+    font-weight: bold;
+    font-size: 2.5rem;
+    animation: typing 3s steps(40, end) forwards,
+               blinkCaret 0.75s step-end 3s;
+  }
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blinkCaret {
+    0%, 50%, 100% { border-color: var(--accent-color); }
+    25%, 75% { border-color: transparent; }
   }
   
   /* =========================
@@ -90,206 +486,36 @@
     right: 1rem;
     cursor: pointer;
     padding: 0.5rem;
-    border-radius: 0.5rem;
-    background-color: var(--card-bg);
     border: 1px solid var(--text-color);
+    border-radius: 0.25rem;
+    background-color: var(--card-bg);
+    transition: background-color 0.2s, color 0.2s;
   }
   
-  /* =========================
-     Navigation Header
-     ========================= */
-  header {
-    margin-top: 5rem;
-  }
-  
-  header p a {
-    margin: 0 0.5rem;
-    font-weight: 500;
-  }
-  
-  /* =========================
-     HERO SECTION
-     ========================= */
-  .hero {
-    background: var(--hero-gradient);
-    padding: 6rem 1.5rem 5rem;
-    margin: 2rem auto 4rem;
-    border-radius: 2rem;
-    max-width: 1100px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    position: relative;
-    overflow: hidden;
-  }
-  
-  /* subtle sparkle animation */
-  .hero::after {
-    content: "✨";
-    position: absolute;
-    font-size: 2rem;
-    top: 20%;
-    left: 10%;
-    animation: floatSparkle 6s infinite ease-in-out;
-    opacity: 0.4;
-  }
-  
-  @keyframes floatSparkle {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
-    100% { transform: translateY(0); }
-  }
-  
-  .hero-name {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .hero-focus {
-    font-size: 1.2rem;
-    letter-spacing: 0.05em;
-    margin-bottom: 1.5rem;
-  }
-  
-  .hero-focus span {
-    opacity: 0.6;
-    margin: 0 0.5rem;
-  }
-  
-  .hero-tagline {
-    font-size: 1.25rem;
-    font-style: italic;
-    margin-bottom: 2.5rem;
-    opacity: 0.85;
-  }
-  
-  .hero-btn {
-    display: inline-block;
-    padding: 0.75rem 1.75rem;
-    border-radius: 999px;
+  .theme-toggle:hover {
     background-color: var(--accent-color);
     color: #fff;
-    font-weight: bold;
-    transition: transform 0.2s ease;
-  }
-  
-  .hero-btn:hover {
-    transform: translateY(-3px);
   }
   
   /* =========================
-     Main Wrapper
-     ========================= */
-  main {
-    max-width: 1000px;
-    margin: auto;
-    padding: 1rem;
-  }
-  
-  /* =========================
-     ABOUT SECTION
-     ========================= */
-  .about {
-    background-color: var(--card-bg);
-    padding: 2.5rem;
-    border-radius: 1.5rem;
-    margin: 4rem 0;
-    text-align: left;
-  }
-  
-  .about h2 {
-    text-align: center;
-    font-size: 2.2rem;
-  }
-  
-  .about-intro {
-    text-align: center;
-    font-size: 1.15rem;
-    margin-bottom: 2.5rem;
-  }
-  
-  /* Dropdowns */
-  .about-dropdowns {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-  
-  .about-dropdowns details {
-    background-color: var(--bg-color);
-    padding: 1.25rem;
-    border-radius: 1rem;
-    cursor: pointer;
-  }
-  
-  .about-dropdowns summary {
-    font-weight: 600;
-    list-style: none;
-  }
-  
-  .about-dropdowns summary::after {
-    content: "▾";
-    float: right;
-  }
-  
-  .about-dropdowns details[open] summary::after {
-    transform: rotate(180deg);
-  }
-  
-  /* =========================
-     SKILLS SECTION
-     ========================= */
-  .skills {
-    margin: 4rem 0;
-  }
-  
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-  }
-  
-  .skill-card {
-    height: 100px;
-    background-color: var(--card-bg);
-    border-radius: 0.75rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-  }
-  
-  /* =========================
-     CONTACT SECTION
-     ========================= */
-  .contact {
-    background-color: var(--card-bg);
-    padding: 2.5rem;
-    border-radius: 1.5rem;
-    margin-bottom: 4rem;
-  }
-  
-  .contact-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  
-  .contact-form input,
-  .contact-form textarea {
-    padding: 0.75rem;
-    border-radius: 0.5rem;
-    border: 1px solid #ccc;
-  }
-  
-  /* =========================
-     RESPONSIVE
+     Responsive Layouts
      ========================= */
   @media (min-width: 768px) {
-    .contact-container {
-      flex-direction: row;
+    .about {
+      text-align: left;
     }
   
-    .hero-name {
-      font-size: 4rem;
+    .contact-container {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .flip-card {
+      width: 90%;
+      height: 200px;
     }
   }
   
