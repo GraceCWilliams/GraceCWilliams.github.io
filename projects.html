@@ -1,84 +1,218 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Projects</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <title>Grace Williams Projects</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
   <!-- Profile / Home Button -->
   <a href="index.html" class="profile-home">
     <img src="profile.jpg" alt="Grace Williams">
-    <strong>Grace Williams</strong>
-    <span>Portfolio</span>
+    <div class="profile-info">
+      <strong>Grace Williams</strong><br>
+      <span>she/her</span><br>
+      <span>Math + CS @ Harvey Mudd College</span>
+    </div>
   </a>
 
   <!-- Theme Toggle -->
-  <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+  <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
 
-  <!-- Header -->
   <header>
     <h1 class="typing-text">My Projects</h1>
+    <p>
+      <a href="index.html">Home</a> | 
+      <a href="projects.html">Projects</a> | 
+      <a href="resume.pdf" target="_blank">Resume</a> | 
+      <a href="https://github.com/GraceCWilliams" target="_blank">GitHub</a>
+    </p>
   </header>
 
-  <!-- Main Section -->
   <main>
-    <!-- Project Card 1 (Observable Notebook) -->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <h2>Interactive Visualization</h2>
-          <p>Click to view full description.</p>
-        </div>
-        <div class="flip-card-back">
-          <h3>Interactive Visualization</h3>
-          <p>Embedded Observable Notebook:</p>
-          <iframe width="100%" height="200" frameborder="0" src="https://observablehq.com/embed/6e1ef6635fc7e060?cells=chart"></iframe>
+
+    <!-- AI & Data Science Section -->
+    <section>
+      <h2>AI & Data Science</h2>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front project-card">
+            <h3>Clinical ML Prediction Model</h3>
+            <p>Predictive modeling on clinical data using scikit-learn and R.</p>
+            <p>Tech: Python, scikit-learn, R, Jupyter</p>
+          </div>
+          <div class="flip-card-back project-card">
+            <p>Fuller description: Built predictive models to analyze clinical datasets and improve outcome predictions.</p>
+            <p>Links: 
+              <a href="#">GitHub</a> | 
+              <a href="#">Colab</a> | 
+              <a href="#">Write-up</a>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Project Card 2 -->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <h2>Data Analysis Project</h2>
-          <p>Click to view full description.</p>
-        </div>
-        <div class="flip-card-back">
-          <h3>Data Analysis Project</h3>
-          <p>Performed large-scale clinical data analysis using R, visualizations, and machine learning prediction models.</p>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front project-card">
+            <h3>Eating Disorder Data Analysis</h3>
+            <p>Large-scale clinical data analysis and ML prediction.</p>
+            <p>Tech: R, Python, Pandas, scikit-learn, Jupyter</p>
+          </div>
+          <div class="flip-card-back project-card">
+            <p>Fuller description: Analyzed large clinical datasets to identify patterns and predict outcomes for eating disorder interventions.</p>
+            <p>Links: 
+              <a href="#">GitHub</a> | 
+              <a href="#">Colab</a>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Project Card 3 -->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <h2>Software Engineering Project</h2>
-          <p>Click to view full description.</p>
-        </div>
-        <div class="flip-card-back">
-          <h3>Software Engineering Project</h3>
-          <p>Built Java-based robotics simulation projects and Python parsing programs for automation and analysis.</p>
+    </section>
+
+    <!-- Visualizations & Observable Section -->
+    <section>
+      <h2>Visualizations & Observable</h2>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front project-card">
+            <h3>Interactive Data Visualization</h3>
+            <p>D3 + Observable notebook exploring real-world dataset trends.</p>
+            <p>Tech: JavaScript, D3.js, Observable</p>
+          </div>
+          <div class="flip-card-back project-card">
+            <p>Fuller description: Interactive visualizations using D3.js. Explore the notebook directly <a href="https://observablehq.com/d/6e1ef6635fc7e060" target="_blank">here</a>.</p>
+            <p>Links: <a href="#">GitHub</a></p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Add more project cards as needed -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front project-card">
+            <h3>Interactive Bar Plot</h3>
+            <p>Dynamic bar plots with hover interactions for data storytelling.</p>
+            <p>Tech: D3.js, JavaScript, HTML/CSS</p>
+          </div>
+          <div class="flip-card-back project-card">
+            <p>Fuller description: Created interactive bar plots that highlight data trends on hover, enhancing storytelling.</p>
+            <p>Links: 
+              <a href="#">Observable</a> | 
+              <a href="#">GitHub</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Web & Software Engineering Section -->
+    <section>
+      <h2>Web & Software Engineering</h2>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front project-card">
+            <h3>Portfolio Website</h3>
+            <p>Responsive portfolio site built with HTML/CSS and JavaScript.</p>
+            <p>Tech: HTML/CSS, JavaScript</p>
+          </div>
+          <div class="flip-card-back project-card">
+            <p>Fuller description: Built my own portfolio website to showcase projects, research, and technical work.</p>
+            <p>Links: 
+              <a href="#">GitHub</a> | 
+              <a href="index.html">Live Demo</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front project-card">
+            <h3>Web App Project</h3>
+            <p>Responsive web application showcasing interactive tools.</p>
+            <p>Tech: HTML/CSS, JavaScript, React (optional)</p>
+          </div>
+          <div class="flip-card-back project-card">
+            <p>Fuller description: Developed a web app with interactive features for user engagement.</p>
+            <p>Links: 
+              <a href="#">Live Demo</a> | 
+              <a href="#">GitHub</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Coursework & Research Section -->
+    <section>
+      <h2>Coursework & Research</h2>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front project-card">
+            <h3>Early Music Ensemble Project</h3>
+            <p>Detailed documentation and interactive journal of ensemble experience.</p>
+            <p>Tech: HTML/CSS, JS, Web layout</p>
+          </div>
+          <div class="flip-card-back project-card">
+            <p>Fuller description: Documented ensemble experiences with interactive web journal for immersive storytelling.</p>
+            <p>Links: 
+              <a href="#">GitHub</a> | 
+              <a href="#">Write-up</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front project-card">
+            <h3>RLC Circuit Analysis</h3>
+            <p>Electrical circuit simulations and analysis using Python.</p>
+            <p>Tech: Python, NumPy, Matplotlib</p>
+          </div>
+          <div class="flip-card-back project-card">
+            <p>Fuller description: Modeled RLC circuits and performed simulations to study system dynamics.</p>
+            <p>Links: <a href="#">GitHub</a></p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
   </main>
 
   <script>
     function toggleTheme() {
-      if(document.documentElement.getAttribute('data-theme') === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'light');
+      const html = document.documentElement;
+      if(html.getAttribute('data-theme') === 'light') {
+        html.setAttribute('data-theme', 'dark');
+        document.querySelector('.theme-toggle').textContent = '🌙';
       } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
+        html.setAttribute('data-theme', 'light');
+        document.querySelector('.theme-toggle').textContent = '🌙';
       }
     }
+
+    // Animate project cards on scroll
+    const cards = document.querySelectorAll('.project-card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    cards.forEach(card => observer.observe(card));
   </script>
 </body>
 </html>
