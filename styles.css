@@ -1,330 +1,100 @@
 /* =========================
-   Root Variables
+   Skills Section
    ========================= */
-   :root {
-    --bg-color: #ffe0e0;
-    --text-color: #111111;
-    --link-color: #1d4ed8;
-    --card-bg: #ffffff;
-    --accent-color: #f59e0b;
+
+   .skills {
+    margin-top: 4rem;
   }
   
-  [data-theme="dark"] {
-    --bg-color: #0f172a;
-    --text-color: #e5e7eb;
-    --link-color: #3b82f6;
-    --card-bg: #1e293b;
-    --accent-color: #fbbf24;
-  }
-  
-  /* =========================
-     Global Styles
-     ========================= */
-  body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Playfair Display', 'Georgia', serif;
-    margin: 0;
-    padding: 0;
+  .skills-intro {
+    max-width: 700px;
+    margin: 0 auto 2rem;
     text-align: center;
-    transition: background 0.3s, color 0.3s;
-  }
-  
-  a {
-    color: var(--link-color);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  
-  a:hover {
-    color: var(--accent-color);
-  }
-  
-  /* =========================
-     Profile / Home Button
-     ========================= */
-  .profile-home {
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    width: 140px;
-    padding: 1rem;
-    background-color: var(--card-bg);
-    border-radius: 0.5rem;
-    border: 2px solid var(--accent-color);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    z-index: 1000;
-    text-decoration: none;
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.2s, background-color 0.2s, color 0.2s;
-  }
-  
-  .profile-home img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-bottom: 0.5rem;
-    object-fit: cover;
-  }
-  
-  .profile-home span {
-    font-size: 0.85rem;
-  }
-  
-  .profile-home:hover {
-    transform: scale(1.05);
-    background-color: var(--accent-color);
-    color: #fff;
-  }
-  
-  /* =========================
-     Buttons
-     ========================= */
-  .btn {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    background-color: var(--accent-color);
-    color: #fff;
-    transition: background-color 0.2s, transform 0.2s;
-  }
-  
-  .btn:hover {
-    transform: translateY(-2px);
-  }
-  
-  /* =========================
-     Header
-     ========================= */
-  header {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem;
-    background-color: var(--card-bg);
-    border-radius: 1rem;
-  }
-  
-  header h1 {
-    font-size: 2.5rem;
-  }
-  
-  header p a {
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
-  }
-  
-  header p a:hover {
-    background-color: var(--accent-color);
-    color: #fff;
-  }
-  
-  /* =========================
-     Main
-     ========================= */
-  main {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 1rem;
-  }
-  
-  /* =========================
-     Intro
-     ========================= */
-  .intro p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1.6;
-  }
-  
-  /* =========================
-     About & Skills (Shared Layout)
-     ========================= */
-  .about {
-    margin: 4rem auto;
-    max-width: 900px;
-    background-color: var(--card-bg);
-    padding: 2rem;
-    border-radius: 1rem;
-    text-align: left;
-  }
-  
-  .about h2 {
-    text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .about-intro {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    margin-bottom: 2.5rem;
-    text-align: center;
+    color: var(--text-color);
   }
   
   /* Dropdown container */
-  .about-dropdowns {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
+  .skills-dropdowns {
+    max-width: 900px;
+    margin: 0 auto;
   }
   
-  /* Dropdown cards */
-  .about-dropdowns details {
+  /* Each dropdown card */
+  .skills-dropdowns details {
+    margin-bottom: 1.25rem;
+    padding: 1rem 1.25rem;
     background-color: var(--card-bg);
     border-radius: 1rem;
-    padding: 1rem 1.25rem;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
   
-  .about-dropdowns details:hover {
+  /* Hover lift */
+  .skills-dropdowns details:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
   }
   
-  .about-dropdowns summary {
+  /* Summary header */
+  .skills-dropdowns summary {
     cursor: pointer;
     list-style: none;
     font-size: 1.15rem;
     font-weight: 600;
     display: flex;
+    align-items: center;
     justify-content: space-between;
   }
   
-  .about-dropdowns summary::-webkit-details-marker {
+  /* Remove default arrow */
+  .skills-dropdowns summary::-webkit-details-marker {
     display: none;
   }
   
-  .about-dropdowns summary::after {
+  /* Custom caret */
+  .skills-dropdowns summary::after {
     content: "▾";
+    font-size: 1.2rem;
     transition: transform 0.25s ease;
   }
   
-  .about-dropdowns details[open] summary::after {
+  /* Rotate caret when open */
+  .skills-dropdowns details[open] summary::after {
     transform: rotate(180deg);
   }
   
-  .about-dropdowns ul {
+  /* Skill list as tag grid */
+  .skills-dropdowns ul {
     margin-top: 1rem;
-    padding-left: 1.25rem;
-  }
-  
-  .about-dropdowns li {
-    margin-bottom: 0.75rem;
-    line-height: 1.6;
-  }
-  
-  /* =========================
-     Skills Specific
-     ========================= */
-  .skills {
-    margin-top: 4rem;
-  }
-  
-  /* =========================
-     Contact
-     ========================= */
-  .contact {
-    background-color: var(--card-bg);
-    padding: 2rem;
-    border-radius: 1rem;
-    margin: 3rem 0;
-  }
-  
-  .contact-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-  }
-  
-  /* =========================
-     Flip Cards
-     ========================= */
-  .projects-container {
+    padding-left: 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
+    gap: 0.5rem;
   }
   
-  .flip-card {
-    width: 300px;
-    height: 220px;
-    perspective: 1000px;
-  }
-  
-  .flip-card-inner {
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-  }
-  
-  .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-  }
-  
-  .flip-card-front,
-  .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 1rem;
-    background-color: var(--card-bg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-  }
-  
-  .flip-card-back {
-    transform: rotateY(180deg);
-  }
-  
-  /* =========================
-     Typing Animation
-     ========================= */
-  .typing-text {
-    border-right: 3px solid var(--accent-color);
+  /* Individual skill pills */
+  .skills-dropdowns li {
+    list-style: none;
+    padding: 0.4rem 0.7rem;
+    border-radius: 999px;
+    background-color: rgba(245, 158, 11, 0.15);
+    color: var(--text-color);
+    font-size: 0.9rem;
     white-space: nowrap;
-    overflow: hidden;
-    animation: typing 3s steps(40) forwards;
+    transition: background-color 0.2s ease, transform 0.2s ease;
   }
   
-  @keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
+  /* Hover effect on skill pills */
+  .skills-dropdowns li:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+    transform: translateY(-1px);
   }
   
-  /* =========================
-     Theme Toggle
-     ========================= */
-  .theme-toggle {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    background-color: var(--card-bg);
-  }
-  
-  /* =========================
-     Responsive
-     ========================= */
-  @media (min-width: 768px) {
-    .contact-container {
-      flex-direction: row;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .flip-card {
-      width: 90%;
-    }
+  /* Smooth open animation */
+  .skills-dropdowns details[open] {
+    animation: dropdownFade 0.25s ease-in;
   }
   
