@@ -519,3 +519,36 @@
     }
   }
   
+  /* =========================
+   Global Navigation Buttons
+   ========================= */
+.nav-btn {
+  display: inline-block;
+  padding: 0.55rem 1rem;
+  margin: 0.25rem;
+
+  border-radius: 0.65rem;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.nav-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
